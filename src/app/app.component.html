@@ -1,8 +1,18 @@
 <h1>First Angular App</h1>
-<div *ngIf="isLoggedIn">
-  <h2>Logged in user : {{ userName }}</h2>
-</div>
 
-@if(isLoggedIn){
-<h3>Logged in user : {{ userName }}</h3>
-}
+<ng-template #dynamicTemplate>
+  <p>This content is inside ng-template</p>
+</ng-template>
+<ng-template #callToAction>
+  <button>Join Now</button>
+</ng-template>
+
+<div [ngTemplateOutlet]="callToAction">
+  <h5>Sidebar</h5>
+</div>
+<div [ngTemplateOutlet]="callToAction">
+  <h5>Header</h5>
+</div>
+<div [ngTemplateOutlet]="callToAction">
+  <h5>footer</h5>
+</div>
