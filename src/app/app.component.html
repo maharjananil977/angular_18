@@ -1,8 +1,14 @@
 <h1>First Angular App</h1>
-<div *ngIf="isLoggedIn">
-  <h2>Logged in user : {{ userName }}</h2>
-</div>
 
-@if(isLoggedIn){
-<h3>Logged in user : {{ userName }}</h3>
-}
+<ul>
+  <li *ngFor="let user of usersObj">
+    {{ user.id }} <button (click)="deleteUser(user)">delete</button>
+  </li>
+</ul>
+
+<ul>
+  @for(user of usersObj;track user){
+  <li>{{ user.id }} <button (click)="deleteUser(user)">delete</button></li>
+  }
+</ul>
+<button (click)="addNewUser()">Add User</button>
